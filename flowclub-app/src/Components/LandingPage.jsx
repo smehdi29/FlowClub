@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import './css/LandingPage.css';
 
 const LandingPage = () => {
     const navigate = useNavigate();
+
     return (
-    <div>LandingPage</div>
-  )
+      <div className="landingPageContainer">
+      </div>
+    )
 }
 export default LandingPage;
