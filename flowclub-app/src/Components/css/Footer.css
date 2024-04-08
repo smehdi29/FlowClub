@@ -7,9 +7,10 @@
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: start;
     padding: 0 10%;
-    flex-direction: column;
+    flex-direction: row;
+
 }
 
 .footer-section {
@@ -20,6 +21,11 @@
 .social-media {
     font-size: 24px;
     color: #2B9380;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 6%;
+    row-gap: 20px;
 }
 
 .social-media .fa {
@@ -40,21 +46,26 @@
     font-weight: bold;
     color: #366E7A;
 }
+.links {
+    padding-right: 5%;
+}
 
-
-.links p {
+.links a, .links p {
     margin-bottom: 5px;
     cursor: pointer;
     color: #3796A3;
     
 }
 
-.links p:hover {
+.links a:hover, .links p:hover {
     text-decoration: underline;
 }
 
+.flowClubTitleFooter {
+    font-family: "Inter", serif;
+}
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -70,4 +81,9 @@
     .links div {
         margin-bottom: 20px;
     }
+}
+
+.horizontalLine {
+    width: 70%;
+    border: 1.5px solid #366E7A;
 }
