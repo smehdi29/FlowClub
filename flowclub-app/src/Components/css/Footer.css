@@ -1,0 +1,69 @@
+.footer {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 10%;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media {
+    font-size: 24px; /* Adjust the size of the icons */
+    color: #333; /* Set the color of the icons */
+}
+
+.social-media .fa {
+    margin-right: 10px; /* Add some spacing between icons */
+    cursor: pointer; /* Change cursor on hover to indicate clickable links */
+}
+
+.social-media .fa:hover {
+    color: #555; /* Change color on hover */
+}
+
+.links div {
+    margin-right: 30px; /* Adjust spacing as needed */
+}
+
+.links h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.links p {
+    margin-bottom: 5px;
+    cursor: pointer;
+    /* You might want to add hover effects to these */
+}
+
+.links p:hover {
+    text-decoration: underline;
+}
+
+/* You can add media queries to make the footer responsive */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .links div {
+        margin-bottom: 20px;
+    }
+}
