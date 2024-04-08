@@ -9,47 +9,51 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 0 10%;
+    flex-direction: column;
 }
 
 .footer-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .social-media {
-    font-size: 24px; /* Adjust the size of the icons */
-    color: #333; /* Set the color of the icons */
+    font-size: 24px;
+    color: #2B9380;
 }
 
 .social-media .fa {
-    margin-right: 10px; /* Add some spacing between icons */
-    cursor: pointer; /* Change cursor on hover to indicate clickable links */
+    margin-right: 10px; 
+    cursor: pointer; 
 }
 
 .social-media .fa:hover {
-    color: #555; /* Change color on hover */
+    color: #555;
 }
 
 .links div {
-    margin-right: 30px; /* Adjust spacing as needed */
+    margin-right: 30px; 
 }
 
 .links h4 {
     margin-bottom: 10px;
     font-weight: bold;
+    color: #366E7A;
 }
+
 
 .links p {
     margin-bottom: 5px;
     cursor: pointer;
-    /* You might want to add hover effects to these */
+    color: #3796A3;
+    
 }
 
 .links p:hover {
     text-decoration: underline;
 }
 
-/* You can add media queries to make the footer responsive */
+
 @media (min-width: 768px) {
     .footer-content {
         flex-direction: column;
