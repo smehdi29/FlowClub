@@ -8,25 +8,15 @@ import './css/Footer.css';
 const Footer = () => {
     const navigate = useNavigate();
     const navigateTo = (path) => () => navigate(path);
-    const navigateExternal = (url) => {
-        return () => window.location = url;
-    };
 
     return (
         <footer className="footer">
-            <hr className="horizontalLine"/>
-            <br />
             <div className="footer-content">
                 <div className="footer-section social-media">
-                    <div className="flowClubTitleFooter">
-                        <p>Flow.Club</p>
-                    </div>
-                    <div className="socialMediaLinks">
-                        <FontAwesomeIcon className="fa" icon={faFacebook} />
-                        <FontAwesomeIcon className="fa" icon={faLinkedin} />
-                        <FontAwesomeIcon className="fa" icon={faTwitter} />
-                        <FontAwesomeIcon className="fa" icon={faInstagram} />
-                    </div>
+                    <FontAwesomeIcon className="fa" icon={faFacebook} />
+                    <FontAwesomeIcon className="fa" icon={faLinkedin} />
+                    <FontAwesomeIcon className="fa" icon={faTwitter} />
+                    <FontAwesomeIcon className="fa" icon={faInstagram} />
                 </div>
                 <div className="footer-section links">
                     <div>
@@ -36,15 +26,15 @@ const Footer = () => {
                     </div>
                     <div>
                         <h4>Resources</h4>
-                        <p onClick={navigateExternal('https://in.flow.club/plans/')}>Pricing</p>
-                        <p onClick={navigateExternal('https://help.flow.club/en/categories/189185-becoming-a-flow-club-host')}>FAQ</p>
-                        <p onClick={navigateExternal('https://in.flow.club/hosts/')}>Meet Our Hosts</p>
+                        <p onClick={navigateTo('/pricing')}>Pricing</p>
+                        <p onClick={navigateTo('/faq')}>FAQ</p>
+                        <p onClick={navigateTo('/hosts')}>Meet Our Hosts</p>
                     </div>
                     <div>
                         <h4>Policies</h4>
-                        <p onClick={navigateExternal('https://www.flow.club/privacy-policy')}>Privacy Policy</p>
-                        <p onClick={navigateExternal('https://www.flow.club/cookie-policy')}>Cookie Policy</p>
-                        <p onClick={navigateExternal('https://www.flow.club/terms-and-conditions')}>Terms and Conditions</p>
+                        <p onClick={navigateTo('/privacy')}>Privacy Policy</p>
+                        <p onClick={navigateTo('/cookie-policy')}>Cookie Policy</p>
+                        <p onClick={navigateTo('/terms')}>Terms and Conditions</p>
                     </div>
                 </div>
             </div>
