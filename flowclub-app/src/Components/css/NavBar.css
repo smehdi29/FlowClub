@@ -1,0 +1,27 @@
+.navBarContainer {
+    background-color: white;
+    width: 13%;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: none;
+    border-radius: 15%;
+}
+
+.navBarContainer button:hover {
+    background-color: #beffff;
+}
+
+.navBarContainer button {
+    border:none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10%;
+    margin: 5px;
+    font-family: 'Inter', serif;
+}
+
+.active {
+    background-color: #8DEEEE !important;
+}

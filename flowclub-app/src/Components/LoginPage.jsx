@@ -39,6 +39,8 @@ const LoginPage = () => {
                 <img src={GoogleLogo} alt="Google sign-in"/>
                 Google
             </button>
+            <p className="orContinueWith">By clicking continue, you agree to our <b>Terms of Service</b> and <b>Privacy Policy</b></p>
+
             <button className="createAccountButton" onClick={navigateTo('/signup')}>Don't have an account? Create one.</button>
           </form>
         </div>

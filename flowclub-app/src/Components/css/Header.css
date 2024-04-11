@@ -7,3 +7,10 @@
 .header p {
     font-size: 2vmax;
 }
+.headerTitle {
+    cursor:pointer;
+}
+
+.headerTitle:hover{
+    color: #0ebce3;
+}

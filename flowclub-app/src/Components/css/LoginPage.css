@@ -34,6 +34,8 @@
     font-family: 'Inika', serif;
     font-size: 1vmax;
     margin-top: 10px;
+    border:none;
+
 }
 
 .loginForm {
@@ -43,7 +45,7 @@
 }
 .googleButton {
     background-color: #EEEEEE;
-    border: 1px solid #EEEEEE;
+    border:none;
     color: black;
     padding: 10px 20px;
     border-radius: 5px;
@@ -62,7 +64,9 @@
     width: 20px; 
     background-color:#EEEEEE;
 }
-
+.googleButton:hover {
+    background-color: darkgray;
+}
 .createAccountButton {
     width: 20vw;
     border-radius: 5px;
@@ -71,8 +75,23 @@
     font-family: 'Inika', serif;
     font-size: 1vmax;
     margin-top: 10px;
+    border:none;
+
+}
+
+.createAccountButton:hover, .signInButton:hover {
+    background-color: darkslategray;
+
+}
+
+p b {
+    font-weight: bold;
 }
 
 .signInSubheading, .orContinueWith {
     font-family: 'Inika', serif;
+}
+
+button {
+    cursor: pointer;
 }

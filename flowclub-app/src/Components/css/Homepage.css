@@ -1,0 +1,54 @@
+.homepageContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.homepageTitle p{
+    color: #366E7A;
+    font-family: 'Inika', serif;
+    font-size: 2vmax;
+    font-weight: bold;
+    margin-bottom: -2%;
+}
+
+.homepageSubheading p {
+    font-family: 'Inika', serif;
+    color: #828282;
+}
+
+.calendarSessionsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.calendarContainer {
+
+}
+
+.sessionButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.scheduleSessionButtonHP, .joinSessionButtonHP {
+    width: 130px;
+    height: 40px;
+    color: #BBFFF3;
+    background-color: black;
+    border:none;
+    border-radius: 10%;
+    font-family: 'Inter', serif;
+}
+
+.scheduleSessionButtonHP:hover, .joinSessionButtonHP:hover {
+    background-color: rgb(50, 50, 50);
+}
