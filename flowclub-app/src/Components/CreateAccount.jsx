@@ -8,8 +8,9 @@ import GoogleLogo from './public/images/GoogleLogo.png';
 const CreateAccount = () => {
     const navigate = useNavigate();
     const navigateTo = (path) => () => navigate(path);
-    const navigateExternal = (url) => {
-      return () => window.location = url;
+    const navigateExternal = (event) => {
+      event.preventDefault();
+      window.location.href = 'https://www.google.com/';
   };
     return (
       <div className="createAccountContainer">
@@ -36,7 +37,7 @@ const CreateAccount = () => {
             <p className="orContinueWith">-----or continue with-----</p>
             <button
               className="googleButton"
-              onClick={navigateExternal('https://www.google.com/')}>    
+              onClick={navigateExternal}>    
                 <img src={GoogleLogo} alt="Google sign-in"/>
                 Google
             </button>

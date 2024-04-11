@@ -7,9 +7,10 @@ import GoogleLogo from './public/images/GoogleLogo.png';
 const LoginPage = () => {
     const navigate = useNavigate();
     const navigateTo = (path) => () => navigate(path);
-    const navigateExternal = (url) => {
-      return () => window.location = url;
-  };
+    const navigateExternal = (event) => {
+        event.preventDefault();
+        window.location.href = 'https://www.google.com/';
+    };
     return (
       <div className="loginPageContainer">
         <Header />
@@ -35,7 +36,7 @@ const LoginPage = () => {
             <p className="orContinueWith">-----or continue with-----</p>
             <button
               className="googleButton"
-              onClick={navigateExternal('https://www.google.com/')}>    
+              onClick={navigateExternal}>    
                 <img src={GoogleLogo} alt="Google sign-in"/>
                 Google
             </button>
