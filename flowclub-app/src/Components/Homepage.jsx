@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/Homepage.css';
 import Header from './Header.jsx';
@@ -35,6 +35,7 @@ const Homepage = () => {
         </div>
         <Footer />
       </div>
-    )
+    );
 }
+
 export default Homepage;

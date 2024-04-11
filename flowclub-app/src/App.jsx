@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './Components/LandingPage';
-import Homepage from './Components/Homepage';
-import LoginPage from './Components/LoginPage';
-import CreateAccount from './Components/CreateAccount';
+import LandingPage from './components/LandingPage';
+import Homepage from './components/Homepage'
+import LoginPage from './components/LoginPage';
+import CreateAccount from './components/CreateAccount';
 
 function App() {
   return (
