@@ -1,0 +1,24 @@
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+}
+.content p{
+    color:gray;
+}
+#add{
+    
+    background-color: black;
+    color:white;
+    padding: 0px 16px;
+    height: 60px;
+    width: 400px;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-bottom: 2em;
+    margin-top: 3em;
+
+}

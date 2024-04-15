@@ -1,0 +1,121 @@
+.form {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 32px 24px;
+    height: 1000px;
+    position: relative;
+    width: 1000px;
+}
+.title,.form{
+    margin-left: 20em;
+    margin-top: 3em;
+}
+.title{
+    font-family: "Inter", Helvetica;
+}
+.title p{
+    color:gray;
+}
+input, textarea{
+    background-color: white;
+}
+textarea{
+    width: 39em;
+    height: 20em;
+}
+.form input{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+    background-color: white;
+    font-family: 'Inter', serif;
+}
+
+.form button{
+    background-color: black;
+    color:white;
+    padding: 0px 16px;
+    height: 60px;
+    width: 400px;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-top: 2em;
+    margin-left: 3em;
+}
+label{
+    font-family: "Inter", Helvetica;
+}
+.input1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.input1box{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2em;
+}
+
+@media (max-width: 768px) {
+    .form {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1em;
+        height: auto;
+        padding: 0 1em; 
+      }
+    
+      .title, .form {
+        margin-left: 0;
+        text-align: center; 
+      }
+    
+      .input1box {
+        margin-right: 0; 
+        margin-bottom: 1em; 
+      }
+    
+      .form button {
+        width: 100%; 
+        margin-left: 0; 
+        margin-top: 1em; 
+      }
+    
+      textarea {
+        width: 100%; 
+        height: 10em; 
+      }
+    
+
+}
+.rightSide{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: start;
+    grid-gap: .8em;
+    transform: scale(1);
+    margin-left:3em;
+    
+}
+.rightSide h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+  
+.rightSide label {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    float: left;
+}
+

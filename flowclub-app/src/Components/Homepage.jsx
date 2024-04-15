@@ -24,7 +24,7 @@ const Homepage = () => {
 
             </div>
             <div className="sessionButtonsContainer">
-            <button onClick={navigateTo('/scheduleSession')} className="scheduleSessionButtonHP">
+            <button onClick={navigateTo('/schedule-session')} className="scheduleSessionButtonHP">
               Schedule Session
             </button>
             <button onClick={navigateTo('/joinSession')} className="joinSessionButtonHP">
