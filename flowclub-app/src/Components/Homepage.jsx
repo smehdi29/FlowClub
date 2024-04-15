@@ -10,7 +10,9 @@ const Homepage = () => {
     const navigate = useNavigate();
     const navigateTo = (path) => () => navigate(path);
     const events = [
-      { start: "2024-04-14T09:00:00", end: "2024-04-14T11:00:00", id: "1", text: "Event 1" },
+      { start: "2024-04-14T08:00:00", end: "2024-04-14T09:00:00", id: "1", text: "1Hr Flow" },
+      { start: "2024-04-16T10:00:00", end: "2024-04-16T11:00:00", id: "2", text: "1Hr Flow" },
+
   ];
 
   const calendarConfig = {
