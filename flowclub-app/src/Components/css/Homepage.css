@@ -28,7 +28,9 @@
 }
 
 .calendarContainer {
-
+    width: 60%;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 .sessionButtonsContainer {
