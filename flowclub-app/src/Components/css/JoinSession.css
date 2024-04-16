@@ -1,0 +1,50 @@
+.JoinSession {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .centered {
+    text-align: center;
+    color: rgb(18, 102, 102);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .inputBox {
+    width: 300px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    width: 300px;
+    height: 40px;
+    margin: 4px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #333;
+  }
+  
