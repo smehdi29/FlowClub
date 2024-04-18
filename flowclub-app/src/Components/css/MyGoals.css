@@ -1,0 +1,117 @@
+
+
+.goalsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inika', serif;
+
+}
+
+.goalBox{
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
+    background-color: #E8CDCD;
+    border-radius: 12px;
+    margin-top: 2em;
+    flex-direction: row;
+}
+.toDo, .toDo > *, .done, .done > *{
+    background-color: #E8CDCD;
+}
+
+.list li{
+    background-color: #E8CDCD;
+    list-style-type:none;
+}
+.toDo strong, .done strong{
+    background-color: #E8CDCD;
+}
+
+.indented {
+    margin-left: 25px;
+    background-color: #E8CDCD;
+}
+.todoIcon{
+    background-color: #E8CDCD;
+}
+.innerListItem{
+    background-color: #E8CDCD;
+}
+.doneIcon{
+    background-color: lightgreen;
+}
+.addAGoalButton{
+    width: 20vw;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-family: 'Inika', serif;
+    font-size: 1vmax;
+    margin-top: 10px;
+    border:none;
+    height: 50px;
+}
+.addAGoalButton:hover{
+    background-color: darkslategray;
+}
+
+.addGoalForm{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 3em;
+}
+.addGoalForm input, .addGoalForm select{
+    width: 20vw;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+    background-color: white;
+    font-family: 'Inter', serif;
+}
+
+.addGoalForm button{
+    width: 20vw;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-family: 'Inika', serif;
+    font-size: 1vmax;
+    margin-top: 10px;
+    border:none;
+    height: 50px;
+}
+
+.editGoalForm{
+    display: flex;
+    flex-direction: column;
+    background-color: #E8CDCD;
+}
+.editGoalForm input,.editGoalForm select{
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+    background-color: white;
+    font-family: 'Inter', serif;
+}
+.editGoalForm button{
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-family: 'Inika', serif;
+    font-size: 32;
+    margin-top: 10px;
+    border:none;
+}
+.innerListItem:hover{
+    cursor: pointer;
+}

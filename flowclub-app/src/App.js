@@ -7,8 +7,10 @@ import LoginPage from './Components/LoginPage';
 import CreateAccount from './Components/CreateAccount';
 import ScheduleSession from './Components/ScheduleSession';
 import MeetingScheduled from './Components/MeetingScheduled';
+import MyGoals from './Components/MyGoals';
 
 function App() {
+  
   return (
     <Router>
       <Routes>
@@ -18,6 +20,7 @@ function App() {
         <Route path="/home" exact element={<Homepage />} />
         <Route path="/schedule-session" exact element={<ScheduleSession />}  />
         <Route path="/meeting-scheduled" exact element={<MeetingScheduled />} />
+        <Route path="/my-goals" exact element={<MyGoals />} />
       </Routes>
     </Router>
   );
