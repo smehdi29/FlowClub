@@ -13,6 +13,7 @@ import JoinSession from './Components/JoinSession';
 import MeetingScreenUser from './Components/MeetingScreenUser';
 import MeetingScreenHost from './Components/MeetingScreenHost';
 import UserFullScreen from './Components/UserFullScreen';
+import MyProfile from './Components/MyProfile';
 
 import './App.css';
 
@@ -28,13 +29,13 @@ function App() {
         <Route path="/home" exact element={<Homepage />} />
         <Route path="/schedule-session" exact element={<ScheduleSession />} />
         <Route path="/meeting-scheduled" exact element={<MeetingScheduled />} />
-
         <Route path="/my-goals" exact element={<MyGoals />} />
-
         <Route path="/join-session" exact element={<JoinSession />} />
         <Route path="/meeting-screen-user" exact element={<MeetingScreenUser />} />
         <Route path="/meeting-screen-host" exact element={<MeetingScreenHost />} />
         <Route path="/fullscreen" exact element={<UserFullScreen/>} />
+        <Route path="/profile" exact element={<MyProfile/>} />
+
       </Routes>
     </Router>
   );
