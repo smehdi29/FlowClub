@@ -6,6 +6,9 @@ import LoginPage from './Components/LoginPage';
 import CreateAccount from './Components/CreateAccount';
 import ScheduleSession from './Components/ScheduleSession';
 import MeetingScheduled from './Components/MeetingScheduled';
+
+import MyGoals from './Components/MyGoals';
+
 import JoinSession from './Components/JoinSession';
 import MeetingScreenUser from './Components/MeetingScreenUser';
 import MeetingScreenHost from './Components/MeetingScreenHost';
@@ -13,7 +16,9 @@ import UserFullScreen from './Components/UserFullScreen';
 
 import './App.css';
 
+
 function App() {
+  
   return (
     <Router>
       <Routes>
@@ -23,6 +28,9 @@ function App() {
         <Route path="/home" exact element={<Homepage />} />
         <Route path="/schedule-session" exact element={<ScheduleSession />} />
         <Route path="/meeting-scheduled" exact element={<MeetingScheduled />} />
+
+        <Route path="/my-goals" exact element={<MyGoals />} />
+
         <Route path="/join-session" exact element={<JoinSession />} />
         <Route path="/meeting-screen-user" exact element={<MeetingScreenUser />} />
         <Route path="/meeting-screen-host" exact element={<MeetingScreenHost />} />

@@ -16,7 +16,7 @@ const NavBar = () => {
         <button onClick={navigateTo('/home')} className={`navBarButtonHome ${getButtonClass('/home')}`}>
             Home
         </button>
-        <button onClick={navigateTo('/goals')} className={`navBarButtonGoals ${getButtonClass('/goals')}`}>
+        <button onClick={navigateTo('/my-goals')} className={`navBarButtonGoals ${getButtonClass('/my-goals')}`}>
             My Goals
         </button>
         <button onClick={navigateTo('/profile')} className={`navBarButtonProfile ${getButtonClass('/profile')}`}>
