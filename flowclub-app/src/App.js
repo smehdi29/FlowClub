@@ -5,6 +5,7 @@ import LandingPage from './Components/LandingPage';
 import Homepage from './Components/Homepage';
 import LoginPage from './Components/LoginPage';
 import CreateAccount from './Components/CreateAccount';
+import MyProfile from './Components/MyProfile';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" exact element={<LoginPage />} />
         <Route path="/signup" exact element={<CreateAccount />} />
         <Route path="/home" exact element={<Homepage />} />
+        <Route path="/profile" exact element = {<MyProfile />} />
       </Routes>
     </Router>
   );
