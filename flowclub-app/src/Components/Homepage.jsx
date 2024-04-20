@@ -10,8 +10,12 @@ const Homepage = () => {
   const navigate = useNavigate();
   const navigateTo = (path) => () => navigate(path);
   const events = [
-    { start: "2024-04-14T09:00:00", end: "2024-04-14T10:00:00", id: "1", text: "1Hr Flow (Host)", path: "/meeting-screen-host" },
-    { start: "2024-04-16T11:00:00", end: "2024-04-16T12:00:00", id: "2", text: "1Hr Flow (Regular User)", path: "/meeting-screen-user" },
+    { start: "2024-04-14T09:00:00", end: "2024-04-14T10:00:00", id: "1", text: "1Hr Flow Video Meeting (Host) - Click to join", path: "/meeting-screen-host", barColor: "#f68b1f" },
+    { start: "2024-04-16T11:00:00", end: "2024-04-16T12:00:00", id: "2", text: "1Hr Flow Video Meeting (Regular User) - Click to join", path: "/meeting-screen-user", barColor: "#6aa84f" },
+    { start: "2024-04-17T17:00:00", end: "2024-04-17T18:00:00", id: "3", text: "Goal: Finish Report", path: "/home",  barColor: "#3d85c6"},
+    { start: "2024-04-18T17:00:00", end: "2024-04-18T18:00:00", id: "4", text: "Goal: Study For Exam", path: "/home",  barColor: "#3d85c6" },
+    { start: "2024-04-19T17:00:00", end: "2024-04-19T18:00:00", id: "5", text: "Goal: Perform Kfold validation on Data", path: "/home", barColor: "#ffd966" },
+
   ];
 
   const calendarClick = (args) => {
