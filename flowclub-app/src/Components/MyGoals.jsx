@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
 import "./css/MyGoals.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faCode, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import ListItem from './ListItem';
 import Header from './Header';
 import Footer from './Footer';
@@ -43,7 +43,9 @@ const MyGoals = () => {
 
     // To be passed into form component
     const handleFormSubmit = (newGoal) => {
-        setGoals([...goals, newGoal]);
+        if(newGoal != null){
+            setGoals([...goals, newGoal]);
+        }
         setShowForm(false); 
     };
 
@@ -124,17 +126,26 @@ const GoalForm = ({ onSubmit }) => {
         setDueDate('');
     };
 
+    //if the user wants to go back from the addGoals page
+    const handleBackButton = (e) =>{
+        onSubmit(null);
+        setGoalText('');
+        setPriority('Medium');
+        setDueDate('');
+    }
+
     return (
         <form onSubmit={handleSubmit} className="addGoalForm">
+            <button className = "backButton" onClick={handleBackButton}>Back</button>
             <h2>Add a goal!</h2>
-            <input type="text" placeholder="Enter goal" value={goalText} onChange={(e) => setGoalText(e.target.value)} required />
+            <input type="text" placeholder="Enter goal" value={goalText} onChange={(e) => setGoalText(e.target.value)} />
             <select value={priority} onChange={(e) => setPriority(e.target.value)}>
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
                 <option value="Low">Low</option>
             </select>
             <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} required />
-            <button type="submit">Add Goal</button>
+            <button id="submitGoal" type="submit">Add Goal</button>
         </form>
     );
 };
@@ -153,17 +164,27 @@ const EditGoalForm = ({ goal, onUpdate }) => {
             dueDate: editedDueDate
         });
     };
+    const handleX = (e) => {
+        onUpdate({
+            text: goal.text,
+            priority: goal.priority,
+            dueDate: goal.dueDate
+        })
+    }
 
     return (
         <form onSubmit={handleSubmit} className="editGoalForm">
-            <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} required />
+            <div className="firstLine">
+                <FontAwesomeIcon icon={faCircleXmark} className="xIcon" onClick={handleX}/>
+                <input type="text" value={editedText} onChange={(e) => setEditedText(e.target.value)} required />
+            </div>
             <select value={editedPriority} onChange={(e) => setEditedPriority(e.target.value)}>
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
                 <option value="Low">Low</option>
             </select>
             <input type="date" value={editedDueDate} onChange={(e) => setEditedDueDate(e.target.value)} required />
-            <button type="submit">Update</button>
+            <button id='updateGoalButton' type="submit">Update</button>
         </form>
     );
 };

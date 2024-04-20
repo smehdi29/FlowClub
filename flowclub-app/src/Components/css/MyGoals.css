@@ -78,7 +78,7 @@
     font-family: 'Inter', serif;
 }
 
-.addGoalForm button{
+.addGoalForm #submitGoal{
     width: 20vw;
     border-radius: 5px;
     background-color: black;
@@ -88,6 +88,9 @@
     margin-top: 10px;
     border:none;
     height: 50px;
+}
+#submitGoal:hover{
+    background-color: darkslategray
 }
 
 .editGoalForm{
@@ -114,4 +117,33 @@
 }
 .innerListItem:hover{
     cursor: pointer;
+    background-color:darkgray;
+    border-radius: 8px;
+    .indented{
+        background-color:darkgray;
+    }
+    strong{
+        background-color:darkgray;
+    }
+}
+.backButton{
+    background-color:darkkhaki;
+    border-radius: 8px;
+    font-family: 'Inika', serif;
+}
+.backButton:hover{
+    background-color: crimson;
+}
+.firstLine, .xIcon{
+    background-color: #E8CDCD;
+}
+.xIcon{
+    margin-right: 4px;
+}
+.xIcon:hover{
+    cursor: pointer;
+    color: crimson;
+}
+#updateGoalButton:hover{
+    background-color: darkslategray
 }
