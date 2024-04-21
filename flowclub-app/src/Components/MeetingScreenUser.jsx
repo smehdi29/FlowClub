@@ -5,6 +5,8 @@ import './css/MeetingScreenUser.css';
 const MeetingScreenUser = () => {
   const [activeTab, setActiveTab] = useState('Goals');
   const [content, setContent] = useState('');
+  const [message, setMessage] = useState('');
+  const [chatMessages, setChatMessages] = useState([]);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -28,17 +30,39 @@ const MeetingScreenUser = () => {
         );
         break;
       case 'Chat':
-        setContent('');
+        setContent(
+          <>
+            {chatMessages.map((msg, index) => (
+              <div key={index}>{msg}</div>
+            ))}
+            <input 
+              type="text" 
+              value={message} 
+              onChange={(e) => {
+                console.log(e.target.value);
+                setMessage(e.target.value);
+              }} 
+            />
+            <button onClick={sendMessage}>Send</button>
+          </>
+        );
         break;
       default:
         setContent('');
     }
   };
 
-  const navigate = useNavigate(); // Define navigate function
+  const navigate = useNavigate();
 
   const leaveMeeting = () => {
-    navigate('/home'); // Use navigate function to redirect
+    navigate('/home');
+  };
+
+  const sendMessage = () => {
+    if (message.trim() !== '') {
+      setChatMessages([...chatMessages, message]);
+      setMessage('');
+    }
   };
 
   return (

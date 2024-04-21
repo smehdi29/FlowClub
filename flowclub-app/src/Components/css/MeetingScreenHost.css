@@ -1,86 +1,82 @@
 .meeting-page-host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-}
-
-.top {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-  margin-left: 380px;
-}
-.middle {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-.bottom {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-  margin-left: 380px;
-}
-.host {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 80px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.user-square {
+display: flex;
+flex-direction: column;
+}
+
+.top, .middle, .bottom {
+display: flex;
+justify-content: space-around;
+margin-bottom: 20px;
+width: 100%;
+}
+
+.host {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-right: 80px;
 }
 
 .pilar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+display: flex;
+flex-direction: row;
+align-items: center;
 }
 
 .camera-frame {
-  background-color: #f0f0f0;
-  width: 200px;
-  height: 200px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+background-color: #f0f0f0;
+width: 200px;
+height: 200px;
+margin-bottom: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .host-camera {
-  background-color: lightblue;
+background-color: lightblue;
 }
 
 .user-camera {
-  background-color: lightgreen;
+background-color: lightgreen;
 }
 
 .content-box {
-  width: 200px;
-  height: 100px;
-  background-color: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 40px;
+width: 200px;
+height: 100px;
+background-color: #ccc;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right: 40px;
 }
 
 .leave-meeting-btn {
-  padding: 10px 20px;
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
+padding: 10px 20px;
+background-color: red;
+color: white;
+border: none;
+cursor: pointer;
 }
 
 .time-remaining {
-  margin-top: 10px;
+margin-top: 10px;
 }
 
 .clock {
-  margin-top: 10px;
+margin-top: 10px;
 }
 
 .meeting-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 20px;
 }

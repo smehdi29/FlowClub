@@ -8,33 +8,25 @@ const MeetingScreenHost = () => {
   const [isBreakModalOpen, setIsBreakModalOpen] = useState(false);
   const [breakLength, setBreakLength] = useState(0);
   const [timeRemaining, setTimeRemaining] = useState(0);
+  const [activeUser, setActiveUser] = useState(null);
 
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-    switch (tab) {
-      case 'Goals':
-        setContent(
-          <>
-            <div>Goal 1</div>
-            <div>Goal 2</div>
-            <div>Goal 3</div>
-          </>
-        );
-        break;
-      case 'Users':
-        setContent(
-          <>
-            <div>User 1</div>
-            <div>User 2</div>
-            <div>User 3</div>
-          </>
-        );
-        break;
-      case 'Chat':
-        setContent('');
-        break;
-      default:
-        setContent('');
+  const users = [
+    { id: 1, name: 'Lori Lightfoot', goals: ['User 1 Goal 1', 'User 1 Goal 2', 'User 1 Goal 3'] },
+    { id: 2, name: 'Derrick Rose', goals: ['Triple Double', 'Score 80', 'User 2 Goal 3'] },
+  ];
+
+  const handleTabClick = (userId) => {
+    const user = users.find(user => user.id === userId);
+    if (user) {
+      setActiveTab('Goals');
+      setActiveUser(userId);
+      setContent(
+        user.goals.map((goal, index) => (
+          <div key={index}>{goal}</div>
+        ))
+      );
+    } else {
+      setContent('');
     }
   };
 
@@ -72,32 +64,24 @@ const MeetingScreenHost = () => {
     <div className="meeting-page-host">
       <div className="meeting-title">1 Hr Flow (8am-9am)</div>
       <div className="top">
-        <div className="pilar"></div>
-        <div className="pilar">
-          
-          <div className="camera-frame user-camera">User Camera</div>
-          <Link to="/fullscreen" className="full-screen-link">Full Screen</Link>
-          <div className="content-box">
-            <div className="tabs">
-              <div className={activeTab === 'Goals' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Goals')}>Goals</div>
-              <div className={activeTab === 'Users' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Users')}>Users</div>
-              <div className={activeTab === 'Chat' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Chat')}>Chat</div>
+        {users.map(user => (
+          <div className="pilar" key={user.id}>
+            <div className='user-square'>
+              <div className="camera-frame user-camera" onClick={() => handleTabClick(user.id)}>
+                {user.name}'s Camera
+              </div>
+              <Link to="/fullscreen" className="full-screen-link">Full Screen</Link>
             </div>
-            <div className="tab-content">{content}</div>
-          </div>
-        </div>
-        <div className="pilar">
-          <div className="camera-frame user-camera">User Camera</div>
-          <Link to="/fullscreen" className="full-screen-link">Full Screen</Link>
-          <div className="content-box">
-            <div className="tabs">
-              <div className={activeTab === 'Goals' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Goals')}>Goals</div>
-              <div className={activeTab === 'Users' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Users')}>Users</div>
-              <div className={activeTab === 'Chat' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Chat')}>Chat</div>
+            <div className="content-box">
+              <div className="tabs">
+                <div className={activeTab === 'Goals' && activeUser === user.id ? 'tab active' : 'tab'} onClick={() => handleTabClick(user.id)}>Goals</div>
+              </div>
+              <div className="tab-content">
+                {activeUser === user.id && content}
+              </div>
             </div>
-            <div className="tab-content">{content}</div>
           </div>
-        </div>
+        ))}
       </div>
       <div className="middle">
         <div className="host">
@@ -107,59 +91,8 @@ const MeetingScreenHost = () => {
           <div className="time-remaining">Time Remaining: {formatTime(timeRemaining)}</div>
           <div className="clock">Clock</div>
         </div>
-        <div className="pilar">
-          <div className="camera-frame user-camera">User Camera</div>
-          <Link to="/fullscreen" className="full-screen-link">Full Screen</Link>
-          <div className="content-box">
-            <div className="tabs">
-              <div className={activeTab === 'Goals' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Goals')}>Goals</div>
-              <div className={activeTab === 'Users' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Users')}>Users</div>
-              <div className={activeTab === 'Chat' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Chat')}>Chat</div>
-            </div>
-            <div className="tab-content">{content}</div>
-          </div>
-        </div>
-        <div className="pilar">
-          <div className="camera-frame user-camera">User Camera</div>
-          <Link to="/fullscreen" className="full-screen-link">Full Screen</Link>
-          <div className="content-box">
-            <div className="tabs">
-              <div className={activeTab === 'Goals' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Goals')}>Goals</div>
-              <div className={activeTab === 'Users' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Users')}>Users</div>
-              <div className={activeTab === 'Chat' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Chat')}>Chat</div>
-            </div>
-            <div className="tab-content">{content}</div>
-          </div>
-        </div>
       </div>
-      {/* Third Row */}
-      <div className="bottom">
-        <div className="pilar"></div>
-        <div className="pilar">
-          <div className="camera-frame user-camera">User Camera</div>
-          <Link to="/fullscreen" className="full-screen-link">Full Screen</Link>
-          <div className="content-box">
-            <div className="tabs">
-              <div className={activeTab === 'Goals' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Goals')}>Goals</div>
-              <div className={activeTab === 'Users' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Users')}>Users</div>
-              <div className={activeTab === 'Chat' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Chat')}>Chat</div>
-            </div>
-            <div className="tab-content">{content}</div>
-          </div>
-        </div>
-        <div className="pilar">
-          <div className="camera-frame user-camera">User Camera</div>
-          <Link to="/fullscreen" className="full-screen-link">Full Screen</Link>
-          <div className="content-box">
-            <div className="tabs">
-              <div className={activeTab === 'Goals' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Goals')}>Goals</div>
-              <div className={activeTab === 'Users' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Users')}>Users</div>
-              <div className={activeTab === 'Chat' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Chat')}>Chat</div>
-            </div>
-            <div className="tab-content">{content}</div>
-          </div>
-        </div>
-      </div>
+      <div className="bottom"></div>
       {isBreakModalOpen && (
         <div className="break-modal">
           <div>Please select the break length:</div>
