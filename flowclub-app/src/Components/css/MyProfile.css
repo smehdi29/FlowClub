@@ -104,9 +104,10 @@
     background-size: contain;
 }
 .edit-label {
-    position: absolute;  /* Remove from document flow for positioning */
-    top: 10px;  /* Position 10px from the top */
-    right: 10px;  /* Position 10px from the right */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 .profile-info label {
     display: block;  /* Stack labels on top of input boxes */

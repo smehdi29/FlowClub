@@ -65,7 +65,7 @@ const MyProfile = () => {
 
     return (
       <div className="homepageContainer">
-        <Header /> <button class="edit-label" id = "EditPage" onClick={enableEdit}>Edit Profile</button>
+        <Header />
         <div className="homepageContent">
           <div className="homepageTitle">
             <p>My Profile</p>
@@ -91,6 +91,7 @@ const MyProfile = () => {
                     ) : (
                         <p>{bio}</p>
                     )}
+                    <button class="edit-label" id = "EditPage" onClick={enableEdit}>Edit Profile</button>
                 </section>
 
                 <div className="profile-image">
