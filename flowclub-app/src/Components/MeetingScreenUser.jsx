@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from './Header.jsx';
 import { useNavigate } from 'react-router-dom';
 import './css/MeetingScreenUser.css';
 
@@ -7,6 +8,9 @@ const MeetingScreenUser = () => {
   const [content, setContent] = useState('');
   const [message, setMessage] = useState('');
   const [chatMessages, setChatMessages] = useState([]);
+  const [usernames, setUsernames] = useState(['Host', 'User 1', 'User 2', 'User 3']);
+  const [isMuted, setIsMuted] = useState([false, false, false]);
+  const [volume, setVolume] = useState([50, 50, 50, 50]);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -23,28 +27,25 @@ const MeetingScreenUser = () => {
       case 'Users':
         setContent(
           <>
-            <div>User 1</div>
-            <div>User 2</div>
-            <div>User 3</div>
+            {usernames.map((username, index) => (
+              <div key={index}>{username}</div>
+            ))}
           </>
         );
         break;
       case 'Chat':
         setContent(
-          <>
-            {chatMessages.map((msg, index) => (
-              <div key={index}>{msg}</div>
-            ))}
-            <input 
-              type="text" 
-              value={message} 
-              onChange={(e) => {
-                console.log(e.target.value);
-                setMessage(e.target.value);
-              }} 
-            />
-            <button onClick={sendMessage}>Send</button>
-          </>
+          <div className="chat-box">
+            <div className="message-input">
+              <input 
+                type="text" 
+                value={message} 
+                onChange={(e) => setMessage(e.target.value)} 
+                placeholder="Type your message here..."
+              />
+              <button onClick={sendMessage}>Send</button>
+            </div>
+          </div>
         );
         break;
       default:
@@ -65,36 +66,44 @@ const MeetingScreenUser = () => {
     }
   };
 
+  const toggleMute = (index) => {
+    const updatedMutedState = [...isMuted];
+    updatedMutedState[index] = !updatedMutedState[index];
+    setIsMuted(updatedMutedState);
+  };
+
+  const handleVolumeChange = (index, e) => {
+    const updatedVolume = [...volume];
+    updatedVolume[index] = parseInt(e.target.value);
+    setVolume(updatedVolume);
+  };
+
   return (
     <div className="meeting-page">
-      <div className="meeting-title">1 Hr Flow (8am-9am)</div>
-      <div className="row" style={{ paddingTop: '30px' }}>
-        <div className="column">
-          <div className="camera-frame" style={{ backgroundColor: 'black', width: '200px', height: '200px', marginRight: '150px', marginBottom: '10px' }}></div>
-          <div className="time-left" style={{marginRight: '150px'}}>Time Left: XX:XX</div>
-          <button className="leave-meeting-btn" onClick={leaveMeeting} style={{marginRight: '150px'}}>Leave Meeting</button>
+      <Header />
+      <div className="content-container" style={{ width: '80%', margin: '0 auto', padding: '20px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
+        <div className="meeting-title">1 Hr Flow (8am-9am)</div>
+        <div className="tabs" style={{ width: '50%', margin: '0 auto' }}>
+          <div className={activeTab === 'Goals' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Goals')}>Goals</div>
+          <div className={activeTab === 'Users' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Users')}>Users</div>
+          <div className={activeTab === 'Chat' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Chat')}>Chat</div>
         </div>
-
-        <div className="column" style={{ marginRight: '1px' }}>
-          <div className="camera-frame" style={{ backgroundColor: 'black', width: '200px', height: '200px', marginBottom: '10px' }}></div>
-        </div>
-
-        <div className="column" style={{ marginLeft: '58px', marginLeft: '100px' }}>
-          <div className="content-box">
-            <div className="tabs">
-              <div className={activeTab === 'Goals' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Goals')}>Goals</div>
-              <div className={activeTab === 'Users' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Users')}>Users</div>
-              <div className={activeTab === 'Chat' ? 'tab active' : 'tab'} onClick={() => handleTabClick('Chat')}>Chat</div>
+        <div className="tab-content">{content}</div>
+        <div className="row" style={{ paddingTop: '30px' }}>
+          {usernames.map((username, index) => (
+            <div key={index} className="column">
+              <div className="camera-frame" style={{ backgroundColor: 'black', width: '200px', height: '200px', marginBottom: '10px' }}></div>
+              <div>{username}</div>
+              <div>
+                <button onClick={() => toggleMute(index)}>{isMuted[index] ? 'Unmute' : 'Mute'}</button>
+                <input type="range" min="0" max="100" value={volume[index]} onChange={(e) => handleVolumeChange(index, e)} />
+              </div>
             </div>
-            <div className="tab-content">{content}</div>
-          </div>
+          ))}
         </div>
-      </div>
-
-      <div className="row" style={{ paddingTop: '50px' }}>
-        <div className="camera-frame" style={{ backgroundColor: 'black', width: '200px', height: '200px', marginRight: '210px', marginBottom: '10px' }}></div>
-        <div className="camera-frame" style={{ backgroundColor: 'black', width: '200px', height: '200px', marginRight: '210px', marginBottom: '10px' }}></div>
-        <div className="camera-frame" style={{ backgroundColor: 'black', width: '200px', height: '200px', marginBottom: '10px' }}></div>
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <button className="leave-meeting-btn" onClick={leaveMeeting}>Leave Meeting</button>
+        </div>
       </div>
     </div>
   );

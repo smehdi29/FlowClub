@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from './Header.jsx';
 import { useNavigate, Link } from 'react-router-dom';
 import './css/MeetingScreenHost.css';
 
@@ -62,6 +63,7 @@ const MeetingScreenHost = () => {
 
   return (
     <div className="meeting-page-host">
+      <Header />
       <div className="meeting-title">1 Hr Flow (8am-9am)</div>
       <div className="top">
         {users.map(user => (
